@@ -9,7 +9,7 @@ from schemas import Task, User
 app = FastAPI()
 
 
-async def get_current_user(username: str, password: str):
+def get_current_user(username: str, password: str):
     for user in users:
         if user["username"] == username:
             if user["password"] == password:
