@@ -13,13 +13,10 @@ async def get_current_user(username: str, password: str):
         if user['username'] == username:
             if user['password'] == password:
                 return User.model_validate(user)
-            else:
-                raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED)
-        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND)
     
 
 @app.get("/tasks/")
-async def get_tasks_for_user(user: Annotated[User,Depends(get_current_user)]):
+async def get_tasks_for_user():
     """
     Получает все задачи пользователя
     """
