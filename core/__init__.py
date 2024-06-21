@@ -1,3 +1,3 @@
-__all__ = ['users', 'tasks']
+__all__ = ["users", "tasks"]
 
-from .fake_db import users, tasks
+from .fake_db import tasks, users
